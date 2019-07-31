@@ -3,11 +3,30 @@
 // ------------------------
 
 // Break Point
-$desktop-width : 1200px;
+$full-width: 1920px;
+$desktop-width : 1800px;
 $laptop-width : 980px;
 $tablet-width: 769px;
 $mobile-width: 640px;
 $mobile-sm-width: 375px;
+
+
+$laptop-height: 1000px;
+
+
+@mixin res--laptop-height {
+  @media screen and (max-height: #{$laptop-height}) {
+    @content;
+  }
+}
+
+// Full
+@mixin res--full {
+  @media screen and (min-width: #{$full-width}) {
+    @content;
+  }
+}
+
 
 // Desktop
 @mixin res--desktop {

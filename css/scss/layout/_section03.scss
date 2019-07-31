@@ -4,41 +4,100 @@
 
 .section3 {
   position: relative;
-  font-size: 1em;
+  font-size: 10px;
+  // font-size: 0.6vw;
+  // padding-left: 10vw;
+  // padding-left: 14em;
+  // padding-right: calc(284 / 1920 * 100%);
   background: #fff;
+  // font-size: 70%;
+
+  @include res--desktop {
+    font-size: 9px;
+  }
+
+  @include res--laptop-height {
+    // font-size: 80%;
+    color: red;
+  }
+
+  .fp-tableCell {
+    max-width: 1920px;
+    outline: 3px solid red;
+    padding-left: calc(142 / 1920 * 100%);
+    padding-top: 18.51851851851852vh;
+    margin: 0 auto;
+    // overflow: auto;
+    width: 100%;
+    // @include flexbox;
+    // @include flex-direction(column);
+    // @include align-items(center);
+    // @include justify-content(center);
+  }
 
   // 상단 큰 영문 타이틀
   &-title {
-    @include font-sub;
-    line-height: 1.5em;
-    font-size: 10em;
-    color: #000;
-  }
+    // margin-right: 70em;
+    // font-size: 100%;
 
-  &-contents {}
+    .textLine {
+      @include font-sub;
+      color: #000;
+      font-size: 680%;
+      // font-size: 5.208333333333334VW;
+      line-height: 150%;
+
+    }
+  }
 
   // 한글 본문
   &-text {
-    top: 3em;
-    position: absolute;
-    font-size: 2em;
-    line-height: 1.8em;
+    position: relative;
+    // position: absolute;
+    // left: 30em;
+    bottom: 6em;
+    // margin-left: calc(670 / 1920 * 100%);
+    outline: 3px solid pink;
+    width: auto;
+    display: inline-block;
+    // margin-left: 40em;
+    // margin-left: 5vw;
+    // font-size: 1.45em;
+  }
+
+  &-paraContainer {
+    // top: -3rem;
+    // outline: 4px solid yellow;
+    // position: relative;
+    // top: -5em;
   }
 
   // 본문 내 개별 문단
   &-para {
     margin-bottom: 2.15em;
+
+
+    .textLine {
+      line-height: 1.6em;
+      // font-size: 2em;
+      font-size: 145%;
+    }
   }
 
   // 하단 문구
   &-strong {
-    font-size: 1.8em;
+    font-size: 162%;
     font-weight: $font-bold;
   }
 
 
   // 카피라이트
   &-copyright {
+    // position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    text-align: right;
     font-size: 1.1em;
   }
 
