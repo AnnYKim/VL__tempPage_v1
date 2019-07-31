@@ -1,0 +1,27 @@
+// ------------------------
+// ++ SECTION 2
+// ------------------------
+
+.section2 {
+  display: none;
+  background: #000;
+
+  .fp-tableCell {}
+
+  &-cont {
+    @include flexbox;
+    @include justify-content(center);
+  }
+
+  &-text {
+    font-size: 30px;
+    color: purple;
+  }
+
+}
+
+.smallLogo {
+  width: 123px;
+  height: 65px;
+  background: gold;
+}

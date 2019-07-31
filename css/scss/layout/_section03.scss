@@ -1,0 +1,45 @@
+// ------------------------
+// ++ SECTION 3
+// ------------------------
+
+.section3 {
+  position: relative;
+  font-size: 1em;
+  background: #fff;
+
+  // 상단 큰 영문 타이틀
+  &-title {
+    @include font-sub;
+    line-height: 1.5em;
+    font-size: 10em;
+    color: #000;
+  }
+
+  &-contents {}
+
+  // 한글 본문
+  &-text {
+    top: 3em;
+    position: absolute;
+    font-size: 2em;
+    line-height: 1.8em;
+  }
+
+  // 본문 내 개별 문단
+  &-para {
+    margin-bottom: 2.15em;
+  }
+
+  // 하단 문구
+  &-strong {
+    font-size: 1.8em;
+    font-weight: $font-bold;
+  }
+
+
+  // 카피라이트
+  &-copyright {
+    font-size: 1.1em;
+  }
+
+}
