@@ -4,15 +4,94 @@
 
 // Break Point
 $full-width: 1920px;
-$desktop-width : 1800px;
-$laptop-width : 980px;
+$wide-width : 1740px;
+$desktop-width : 1500px;
+$laptop-width : 1200px;
+$small-width : 980px;
 $tablet-width: 769px;
 $mobile-width: 640px;
 $mobile-sm-width: 375px;
 
 
+
+$width-0: 1920px;
+$width-1: 1780px;
+$width-2: 1600px;
+$width-3: 1500px;
+$width-4: 1300px;
+$width-5: 1250px;
+$width-6: 1080px;
+$width-7: 768px;
+$width-8: 500px;
+$height-sm: 600px;
+
 $laptop-height: 1000px;
 
+
+
+
+//----
+
+@mixin res--full {
+  @media screen and (min-width: #{$width-0}) {
+    @content;
+  }
+}
+
+@mixin res--w1 {
+  @media screen and (max-width: #{$width-1}) {
+    @content;
+  }
+}
+
+@mixin res--w2 {
+  @media screen and (max-width: #{$width-2}) {
+    @content;
+  }
+}
+
+@mixin res--w3 {
+  @media screen and (max-width: #{$width-3}) {
+    @content;
+  }
+}
+
+@mixin res--w4 {
+  @media screen and (max-width: #{$width-4}) {
+    @content;
+  }
+}
+
+@mixin res--w5 {
+  @media screen and (max-width: #{$width-5}) {
+    @content;
+  }
+}
+
+
+@mixin res--w6 {
+  @media screen and (max-width: #{$width-6}) {
+    @content;
+  }
+}
+
+@mixin res--w7 {
+  @media screen and (max-width: #{$width-7}) {
+    @content;
+  }
+}
+
+@mixin res--w8 {
+  @media screen and (max-width: #{$width-8}) {
+    @content;
+  }
+}
+
+@mixin res--h8 {
+  @media screen and (max-height: #{$height-sm}) {
+    @content;
+  }
+}
 
 @mixin res--laptop-height {
   @media screen and (max-height: #{$laptop-height}) {
@@ -20,13 +99,29 @@ $laptop-height: 1000px;
   }
 }
 
+
+
+
 // Full
-@mixin res--full {
-  @media screen and (min-width: #{$full-width}) {
+// @mixin res--full {
+//   @media screen and (min-width: #{$full-width}) {
+//     @content;
+//   }
+// }
+
+// Desktop
+@mixin res--wide {
+  @media screen and (max-width: #{$wide-width}) {
     @content;
   }
 }
 
+// Desktop
+@mixin res--small {
+  @media screen and (max-width: #{$small-width}) {
+    @content;
+  }
+}
 
 // Desktop
 @mixin res--desktop {

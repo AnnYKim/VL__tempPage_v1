@@ -3,10 +3,13 @@
 // ------------------------
 
 .section2 {
-  display: none;
   background: #000;
 
-  .fp-tableCell {}
+  .fp-tableCell {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+  }
 
   &-cont {
     @include flexbox;
@@ -14,14 +17,28 @@
   }
 
   &-text {
-    font-size: 30px;
-    color: purple;
+    font-size: 4.6875vw;
+    color: #fff;
+    line-height: 1;
+    @include font-sub;
+
+    @include res--full {
+      // font-size: ;
+    }
+
+    .textLine {
+      margin-bottom: 4.6875vw;
+    }
   }
 
 }
 
 .smallLogo {
-  width: 123px;
-  height: 65px;
+  width: 6.5625vw;
+  height: 3.2291vw;
+  margin-top: 0.6vw;
+  margin-right: 12.1875vw;
   background: gold;
+
+  @include res--full {}
 }
