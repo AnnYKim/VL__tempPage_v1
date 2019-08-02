@@ -8,6 +8,7 @@
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
+  // display: none;
 
   .fp-tableCell {
     position: relative;
@@ -42,6 +43,10 @@
       font-size: 5.2083vw;
       line-height: 140%;
       color: #000;
+      // +++++ GSAP 애니메이션용 +++++
+      opacity: 0;
+      position: relative;
+      transform: scale(0.8) translateX(-300px);
 
       // <반응형> 좁은 화면
       @include res--small {
@@ -84,7 +89,11 @@
     }
   }
 
-  &-paraContainer {}
+  &-paraContainer {
+    // +++++ GSAP 애니메이션용 +++++
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
   // 본문 내 개별 문단
   &-para {
@@ -118,14 +127,13 @@
       margin-top: 20px;
     }
 
-
     &:before,
     &:after {
       position: absolute;
       top: 0.6vw;
       height: 0.9375vw;
       background: #efe449;
-      content: '';
+      // content: '';
 
       // <반응형> 데스크탑
       @include res--desktop {
@@ -167,7 +175,52 @@
 
   &-strongText {
     // height: 20px;
+    transform: translate3d(-20px, 0px, 0);
+    opacity: 0;
   }
+
+  &-strongLine {
+    z-index: -1;
+    position: absolute;
+    // width: 100vw;
+    width: 0;
+    height: 0.9375vw;
+    left: -100vw;
+    bottom: 0.2vw;
+    background: #efe449;
+
+    &.line1 {
+
+      // <반응형> 좁은 랩탑
+      @include res--small {
+        display: none;
+        height: 14px;
+        left: 100%;
+      }
+    }
+
+    &.line2 {
+      width: 0%;
+      left: 0;
+    }
+
+    // <반응형> 랩탑
+    @include res--laptop {
+      height: 1.2vw;
+    }
+
+    // <반응형> 좁은 랩탑
+    @include res--small {
+      height: 14px;
+    }
+
+    // <반응형> 랩탑
+    @include res--mobile {
+      height: 14px;
+    }
+
+  }
+
 
   // 카피라이트
   &-copyright {
@@ -177,7 +230,7 @@
     // bottom: 1vw;
     // display: block;
     // text-align: right;
-    // font-size: 0.625vw;
+    font-size: 0.625vw;
     width: 100%;
     text-align: right;
     right: 14.7916vw;
@@ -188,7 +241,7 @@
       bottom: 0;
       top: 40px;
       right: 2.3vw;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     // <반응형> 모바일
@@ -197,7 +250,6 @@
       bottom: 0;
       top: 0;
       right: 0;
-      font-size: 11px;
     }
   }
 
