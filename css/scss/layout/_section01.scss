@@ -3,7 +3,6 @@
 // ------------------------
 
 .section1 {
-  // display: none;
   background: #000;
 
   .fp-tableCell {
@@ -14,8 +13,59 @@
 }
 
 .titleLogo {
-  width: 461px;
-  height: 373px;
-  //---
-  background: red;
+  width: 23.1770vw; //445
+  // height: 17.7083; //340
+
+  // <반응형> 데스크탑
+  @include res--desktop {
+    outline: 4px dotted darkkhaki;
+    width: 31.25vw;
+    // height: 23.854166666666668vw;
+  }
+
+  // <반응형> 랩탑
+  @include res--laptop {
+    outline: 4px dotted red;
+    width: 37.5VW;
+    height: 28.645833333333332VW;
+  }
+
+  // <반응형> 모바일
+  @include res--laptop {
+    outline: 4px dotted ivory;
+    width: 41.66666666666667VW;
+    height: 31.822916666666668VW;
+  }
+}
+
+@keyframes testAni {
+  4% {
+    transform: translate(0px, 19px) scaleY(0.1);
+  }
+
+  6% {
+    transform: translate(0px, 0px) scaleY(1);
+  }
+
+  8% {
+    transform: translate(0px, 19px) scaleY(0.1);
+  }
+
+  10% {
+    transform: translate(0px, 0px) scaleY(1);
+  }
+
+  98% {
+    transform: translate(0px, 0px) scaleY(1);
+  }
+
+  100% {
+    transform: translate(0px, 19px) scaleY(0.1);
+  }
+}
+
+.vidoriEyes {
+  transform-origin: 0 0;
+  animation: testAni 4s infinite;
+  animation-delay: 1s;
 }

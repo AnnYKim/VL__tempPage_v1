@@ -76,7 +76,14 @@
   height: 3.2291vw; //62
   margin-top: 0.6vw;
   margin-right: 12.1875vw;
-  background: gold;
+  // background: gold;
+  // @include bgi("smallLogo");
+  // background-size: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 
   // <반응형> 태블릿
   @include res--tablet {
@@ -86,4 +93,43 @@
     width: 12.5vw; //240
     height: 5.885416666666667vw; //113
   }
+}
+
+.section2-text {
+  // background: red;
+}
+
+.accent-red {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include bgi("accent-red");
+  background-repeat: round;
+  // color: rgba(0, 0, 0, .2);
+}
+
+.accent-yellow {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include bgi("accent-yellow");
+  // padding-bottom: 5px;
+  padding-bottom: 0.4vw;
+  background-repeat: round;
+  // color: rgba(0, 0, 0, .2);
+}
+
+
+// IE 대응
+html[data-agent*="Trident"] {
+  .accent-red {
+    color: #ff3737;
+  }
+
 }
