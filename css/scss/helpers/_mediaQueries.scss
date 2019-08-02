@@ -3,14 +3,19 @@
 // ------------------------
 
 // Break Point
-$full-width: 1920px;
-$wide-width : 1740px;
+$full-width: 1800px;
+$wide-width : 1780px;
 $desktop-width : 1500px;
 $laptop-width : 1200px;
 $small-width : 980px;
 $tablet-width: 769px;
 $mobile-width: 640px;
 $mobile-sm-width: 375px;
+
+
+$high-height: 1200px;
+$low-height: 640px;
+$middle-height: 800px;
 
 
 
@@ -27,16 +32,16 @@ $height-sm: 600px;
 
 $laptop-height: 1000px;
 
+@mixin res--wideWidth--lowHeight {
+  @media screen and (min-width: #{$laptop-width}) and (max-height: #{$low-height}) {
+    @content;
+  }
+}
+
 
 
 
 //----
-
-@mixin res--full {
-  @media screen and (min-width: #{$width-0}) {
-    @content;
-  }
-}
 
 @mixin res--w1 {
   @media screen and (max-width: #{$width-1}) {
@@ -109,6 +114,12 @@ $laptop-height: 1000px;
 //   }
 // }
 
+@mixin res--full {
+  @media screen and (min-width: #{$full-width}) {
+    @content;
+  }
+}
+
 // Desktop
 @mixin res--wide {
   @media screen and (max-width: #{$wide-width}) {
@@ -151,9 +162,23 @@ $laptop-height: 1000px;
   }
 }
 
-// Mobile (Small)
-@mixin res--mobile-sm {
-  @media screen and (max-width: #{$mobile-sm-width}) {
+// Max Height
+@mixin res--highHight {
+  @media screen and (min-height: #{$high-height}) {
+    @content;
+  }
+}
+
+// Low Height
+@mixin res--middleHeight {
+  @media screen and (max-height: #{$middle-height}) {
+    @content;
+  }
+}
+
+// Low Height
+@mixin res--lowHeight {
+  @media screen and (max-height: #{$low-height}) {
     @content;
   }
 }

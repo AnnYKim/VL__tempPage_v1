@@ -4,41 +4,86 @@
 
 .section2 {
   background: #000;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
 
   .fp-tableCell {
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
+
   }
 
   &-cont {
     @include flexbox;
     @include justify-content(center);
+    padding: 9.375vw 0;
+
+    // <반응형> 태블릿
+    @include res--tablet {
+      display: block;
+    }
+
+    // <반응형> 좁은 화면
+    @include res--mobile {
+      width: 100vw;
+      padding-left: 20px;
+      padding-right: 20px;
+      outline: 3px solid darkslateblue;
+    }
   }
 
   &-text {
-    font-size: 4.6875vw;
+    font-size: 4.4vw;
     color: #fff;
     line-height: 1;
     @include font-sub;
 
-    @include res--full {
-      // font-size: ;
+    // <반응형> 태블릿
+    @include res--tablet {
+      font-size: 5.3vw;
+    }
+
+    // <반응형> 좁은 화면
+    @include res--mobile {
+      font-size: 5.8vw;
     }
 
     .textLine {
-      margin-bottom: 4.6875vw;
+      margin-bottom: 4.4vw;
+
+      // <반응형> 풀화면
+      @include res--full {
+        margin-bottom: 3.8vw;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // <반응형> 태블릿
+      @include res--tablet {
+        margin-bottom: 5.8vw;
+      }
     }
   }
 
 }
 
 .smallLogo {
-  width: 6.5625vw;
-  height: 3.2291vw;
+  width: 6.8750vw; //132
+  height: 3.2291vw; //62
   margin-top: 0.6vw;
   margin-right: 12.1875vw;
   background: gold;
 
-  @include res--full {}
+  // <반응형> 태블릿
+  @include res--tablet {
+    margin-bottom: 14vw;
+    // width: 10.4166vw; //200
+    // height: 4.8958vw; //94
+    width: 12.5vw; //240
+    height: 5.885416666666667vw; //113
+  }
 }
