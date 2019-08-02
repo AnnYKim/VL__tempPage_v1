@@ -5,11 +5,32 @@ function goFullPage() {
     scrollingSpeed: 600,
     keyboardScrolling: true,
     easing: 'easeInOutQuint',
+    onLeave: function (origin, destination, direction) {
+      var leavingSection = this;
+      if (origin.index == 0 && direction == 'down') {
+        console.log("Going to section 2!");
+        tl_sec2.play();
+      }
+      if (origin.index == 1 && direction == 'down') {
+        console.log("Going to section 3!");
+        tl_sec3.play();
+      }
+    }
   });
+  // fullpage_api.setAllowScrolling(false);
 
 
 
 }
+
+var first = new TimelineLite();
+var tl_sec1 = new TimelineLite();
+var tl_sec2 = new TimelineLite({
+  paused: true
+});
+var tl_sec3 = new TimelineLite({
+  paused: true
+});
 var windowW = 0;
 var loadImage = document.querySelector(".loadImage");
 var loadBackground = document.querySelector(".loadBackground");
@@ -44,11 +65,6 @@ function animation() {
 
   console.log(sec1logoText);
 
-  var first = new TimelineLite();
-  var tl_sec1 = new TimelineLite();
-  var tl_sec2 = new TimelineLite();
-  var tl_sec3 = new TimelineLite();
-
 
   var titleAnimation = {
     scale: 1,
@@ -63,22 +79,25 @@ function animation() {
       onComplete: function () {
         body.classList.add("go")
       }
-    }).from(titleLogo, 1.5, {
+    }).from(titleLogo, 1.4, {
       autoAlpha: 0,
-    }, "start+=0.1")
-    .from(titleLogo, 1.23, {
+    }, "start+=0.05")
+    .from(titleLogo, 1.2, {
       // y: -30,
       scale: '0.93',
       ease: Bounce.easeOut,
-    }, "start+=0.1").addLabel("title")
-    .staggerFrom([sec1logoText[0], sec1logoText[1], sec1logoText[2], sec1logoText[3]], 0.4, {
+      onComplete: function () {
+        fullpage_api.setAllowScrolling(true);
+      }
+    }, "start+=0.05").addLabel("title")
+    .staggerFrom([sec1logoText[0], sec1logoText[1], sec1logoText[2], sec1logoText[3]], 0.35, {
       x: '-15px',
       autoAlpha: 0,
-    }, 0.04)
-    .staggerFrom([sec1logoText[4], sec1logoText[5], sec1logoText[6], sec1logoText[7]], 0.4, {
+    }, 0.03, "start+=1.3")
+    .staggerFrom([sec1logoText[4], sec1logoText[5], sec1logoText[6], sec1logoText[7]], 0.35, {
       x: '-15px',
       autoAlpha: 0,
-    }, 0.04, "title+=0.2");
+    }, 0.03, "title+=0");
 
   // tl_sec1.addLabel("start", "0")
   //   .staggerFrom([sec1logoText[0], sec1logoText[1], sec1logoText[2], sec1logoText[3]], 0.4, {
@@ -105,15 +124,16 @@ function animation() {
     .to(sec3StrongLine1, 0.5, {
       width: '100vw',
       ease: Linear.easeNone
-    }, "start+=1.1")
-    .addLabel("line", "0").to(sec3StrongLine2, 0.2, {
+    }, "start+=0.9")
+    .addLabel("line", "0")
+    .to(sec3StrongLine2, 0.25, {
       width: '100%',
       ease: Linear.easeNone
-    }, "line+=1.6")
-    .to(sec3StrongText, 0.37, {
+    }, "line+=1.38")
+    .to(sec3StrongText, 0.44, {
       autoAlpha: 1,
       x: 0,
-    }, "line+=1.6");
+    }, "line+=1.42");
 
 }
 
