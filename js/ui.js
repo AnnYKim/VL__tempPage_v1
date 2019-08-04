@@ -60,7 +60,7 @@ function animation() {
   var sec3StrongText = document.querySelector(".section3-strongText");
   var sec1logoText = document.querySelectorAll(".logo--path");
   var titleLogo = document.querySelector(".titleLogo");
-  var winkEye = document.querySelector(".eyes-wink");
+  var vidoriEyes = document.querySelectorAll(".vidoriEyes");
 
 
   console.log(sec1logoText);
@@ -84,7 +84,7 @@ function animation() {
     }, "start+=0.05")
     .from(titleLogo, 1.2, {
       // y: -30,
-      scale: '0.93',
+      scale: '0.9',
       ease: Bounce.easeOut,
       onComplete: function () {
         fullpage_api.setAllowScrolling(true);
@@ -97,6 +97,12 @@ function animation() {
     .staggerFrom([sec1logoText[4], sec1logoText[5], sec1logoText[6], sec1logoText[7]], 0.35, {
       x: '-15px',
       autoAlpha: 0,
+      onComplete: function () {
+        vidoriEyes.forEach(function (el) {
+          el.classList.remove("eye-wink");
+          el.classList.add("eye-blink");
+        });
+      }
     }, 0.03, "title+=0");
 
   // tl_sec1.addLabel("start", "0")

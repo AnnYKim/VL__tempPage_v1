@@ -72,7 +72,7 @@
   }
 }
 
-.vidoriEyes {
+.eye-blink {
   transform-origin: 0 0;
   animation: eyeBlink 4s infinite;
   animation-delay: 1s;
@@ -80,8 +80,7 @@
 
 .eye-wink {
   animation: eyeWink 0.4s forwards;
-  animation-delay: 1.25s;
-
+  animation-delay: 1.1s;
 }
 
 [data-logo="v"] {
