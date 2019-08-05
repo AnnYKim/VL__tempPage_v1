@@ -196,26 +196,6 @@ html {
   font-weight: $font-demilight;
   @include font-main;
 
-  @include res--w1 {
-    font-size: 58.5%;
-  }
-
-  // @include res--w2 {
-  //   font-size: 55%;
-  // }
-
-  // @include res--w3 {
-  //   font-size: 53%;
-  // }
-
-  // @include res--w4 {
-  //   font-size: 52%;
-  // }
-
-  // @include res--w5 {
-  //   font-size: 49%;
-  // }
-
 }
 
 body {
@@ -236,28 +216,6 @@ body {
   position: relative;
   width: 100vw;
 }
-
-.width {
-  outline: 4px solid red;
-  background: red;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  font-size: 30px;
-  left: 0;
-}
-
-.type {
-  outline: 4px solid blue;
-  background: blue;
-  color: #fff;
-  position: fixed;
-  top: 40px;
-  font-size: 30px;
-  left: 0;
-}
-
-
 
 .section {
   overflow: hidden;

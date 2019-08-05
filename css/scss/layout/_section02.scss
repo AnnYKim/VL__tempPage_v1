@@ -7,7 +7,6 @@
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
-  // display: none;
 
   .fp-tableCell {
     @include flexbox;
@@ -126,18 +125,14 @@
 }
 
 
-// IE 대응
-html[data-agent*="Trident"] {
-  .accent-red {
-    color: #ff3737;
-  }
+// // IE 대응
+// html[data-agent*="Trident"] {
+//   .accent-red {
+//     color: #ff3737;
+//   }
 
-  .accent-yellow {
-    color: #efe449;
-  }
+//   .accent-yellow {
+//     color: #efe449;
+//   }
 
-}
-
-body {
-  overflow: hidden;
-}
+// }

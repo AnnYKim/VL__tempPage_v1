@@ -5,7 +5,7 @@
 
 
 // 폰트
-@mixin font-main($weight: 500) {
+@mixin font-main($weight: 400) {
   font-family: "NotoSans", AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }

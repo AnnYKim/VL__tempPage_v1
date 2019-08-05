@@ -3,7 +3,6 @@
 // ------------------------
 
 .section1 {
-  // display: none;
   background: #000;
   background: #fafafa;
 
@@ -16,7 +15,6 @@
 
 .titleLogo {
   position: relative;
-  // top: 200px;
   width: 23.1770vw; //445
   height: 17.7083vw; //340
 
@@ -39,38 +37,7 @@
   }
 }
 
-@keyframes eyeWink {
-  4% {
-    transform: translate(0px, 19px) scaleY(0.1);
-  }
 
-}
-
-@keyframes eyeBlink {
-  4% {
-    transform: translate(0px, 19px) scaleY(0.1);
-  }
-
-  6% {
-    transform: translate(0px, 0px) scaleY(1);
-  }
-
-  8% {
-    transform: translate(0px, 19px) scaleY(0.1);
-  }
-
-  10% {
-    transform: translate(0px, 0px) scaleY(1);
-  }
-
-  98% {
-    transform: translate(0px, 0px) scaleY(1);
-  }
-
-  100% {
-    transform: translate(0px, 19px) scaleY(0.1);
-  }
-}
 
 .eye-blink {
   transform-origin: 0 0;
@@ -83,63 +50,6 @@
   animation-delay: 1.1s;
 }
 
-[data-logo="v"] {
-  // +++++ GSAP 애니메이션용 +++++
-  // opacity: 0;
-  // position: relative;
-  // left: -300px;
-  // transform: translateY(-20px);
-  // transform: translate(-10px, 0px);
-  // animation: titleLogoAni 1s forwards;
-}
-
 .logo--path {
   position: absolute;
-  // opacity: 0;
-  // transform: translateY(-20px);
-
-}
-
-@keyframes titleLogoAni {
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-
-.loadImage {
-  display: block;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #fff;
-}
-
-.loadBackground {
-  z-index: 10;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vmax;
-  height: 100vmax;
-  background-color: #000000;
-  // top: -50vw;
-  transform-origin: center;
-  // left: -50vw;
-  transform: translate(-50%, -50%) scale(0.001);
-  border-radius: 50%;
-
-}
-
-.go {
-  .loadBackground {
-    display: none;
-  }
-
-  .section1 {
-    background: #000;
-  }
 }

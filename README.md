@@ -2,7 +2,7 @@
 
 - **Web Published: nana@thevitolabs.com**
 - **저장소 주소: [https://github.com/AnnYKim/VL__tempPage_v1](https://github.com/AnnYKim/VL__tempPage_v1)**
-- _Last Modified: 2019-07-31_
+- _Last Modified: 2019-08-05_
 
 ---
 
